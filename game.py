@@ -11,13 +11,14 @@ from lib.pyglet.shaders_manager import ShadersManager
 from lib.rect import Rect
 
 pyglet.options['shadow_window'] = False
-config = pyglet.gl.Config(double_buffer=True,
-                          depth_size=24,
-                          major_version=3,
-                          minor_version=2,
-                          forward_compatible=True)
 
-window = pyglet.window.Window(width=480, height=270, config=config)
+# config = pyglet.gl.Config(double_buffer=True,
+#                           depth_size=24,
+#                           # major_version=3,
+#                           # minor_version=2,
+#                           forward_compatible=True)
+window = pyglet.window.Window(width=480, height=270)
+
 # Print the version of the context created.
 print('OpenGL version:', window.context.get_info().get_version())
 print('OpenGL 2.1 support:', window.context.get_info().have_version(2, 1))
@@ -28,8 +29,8 @@ Gfx.initialize()
 pyglet.gl.glClearColor(0, 0, 0, 0)
 window.clear()
 
-shader = ShadersManager()
-shader.test()
+# shader = ShadersManager()
+# shader.test()
 
 
 # =================================

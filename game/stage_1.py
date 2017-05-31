@@ -7,12 +7,12 @@ class Stage1(Stage):
     def __init__(self):
         super().__init__()
 
-        self.img_bg = Gfx.load_image('resources/images/stage_1/bg_far.png')
-        self.img_fg_left = Gfx.load_image('resources/images/stage_1/fg_left.png')
-        self.img_fg_bottom = Gfx.load_image('resources/images/stage_1/fg_bottom.png')
-        self.img_train = Gfx.load_image('resources/images/stage_1/train.png')
-        self.img_pillar = Gfx.load_image('resources/images/stage_1/pillar.png')
-        self.img_grid = Gfx.load_image('resources/images/stage_1/grid.png')
+        self.img_bg = Gfx.load_image('resources/stages/stage_1/bg_far.png')
+        self.img_fg_left = Gfx.load_image('resources/stages/stage_1/fg_left.png')
+        self.img_fg_bottom = Gfx.load_image('resources/stages/stage_1/fg_bottom.png')
+        self.img_train = Gfx.load_image('resources/stages/stage_1/train.png')
+        self.img_pillar = Gfx.load_image('resources/stages/stage_1/pillar.png')
+        self.img_grid = Gfx.load_image('resources/stages/stage_1/grid.png')
         #
         self.train_x = -self.img_train.width - 10000
         self.train_y = 0
