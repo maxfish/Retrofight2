@@ -52,7 +52,7 @@ def add_players(
         gamepads,
         sprites=(
                 # sprite,  footprint, posx, posy
-                ('cody', Player.DEFAULT_FOOTPRINT_DIM, 130, 245),
+                ('max', Player.DEFAULT_FOOTPRINT_DIM, 130, 245),
                 ('haggar', Rect(0, 0, 50, 12), 160, 230),
                 ('guy', Player.DEFAULT_FOOTPRINT_DIM, 200, 260),
         ),

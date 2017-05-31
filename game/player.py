@@ -283,7 +283,7 @@ class PlayerStatePunch(PlayerState):
         elif self.p.gamepad.is_button_down('B'):
             self.p.attack_force = self.p.ATTACK_FORCE_PUNCH_2
             # self.p.punch_2_sound.play()
-            self.play_anim("punch2")
+            self.play_anim("punch_low")
 
     def update(self, game_speed):
         super().update(game_speed)
