@@ -12,12 +12,12 @@ from lib.rect import Rect
 
 pyglet.options['shadow_window'] = False
 
-# config = pyglet.gl.Config(double_buffer=True,
-#                           depth_size=24,
-#                           # major_version=3,
-#                           # minor_version=2,
-#                           forward_compatible=True)
-window = pyglet.window.Window(width=480, height=270)
+config = pyglet.gl.Config(double_buffer=True,
+                          depth_size=24,
+                          major_version=2,
+                          minor_version=1,
+                          forward_compatible=True)
+window = pyglet.window.Window(width=640, height=480, config=config)
 
 # Print the version of the context created.
 print('OpenGL version:', window.context.get_info().get_version())
@@ -72,7 +72,9 @@ def update_frames(dt):
         p.handle_input()
     world.update(1)
 
+
 fps_display = pyglet.clock.ClockDisplay()
+
 
 @window.event
 def on_draw():
@@ -80,6 +82,7 @@ def on_draw():
     window.clear()
     world.draw(None)
     fps_display.draw()
+
 
 pyglet.clock.schedule_interval(update_frames, 1.0 / 30)
 pyglet.app.run()

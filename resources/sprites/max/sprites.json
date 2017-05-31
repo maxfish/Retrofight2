@@ -1,0 +1,1143 @@
+{
+  "animations": {
+    "dive_attack": {
+      "frames": [
+        {
+          "frame": "dive_kick.0"
+        }
+      ]
+    },
+    "fall": {
+      "frames": [
+        {
+          "frame": "fall.0"
+        }
+      ]
+    },
+    "ground": {
+      "frames": [
+        {
+          "frame": "ground.0"
+        }
+      ]
+    },
+    "hurt": {
+      "frames": [
+        {
+          "frame": "hurt.0"
+        }
+      ]
+    },
+    "jump": {
+      "frames": [
+        {
+          "frame": "jump.01"
+        },
+        {
+          "frame": "jump.02"
+        },
+        {
+          "frame": "jump.03",
+          "delay": 3
+        },
+        {
+          "frame": "jump.04",
+          "delay": 8
+        },
+        {
+          "frame": "jump.03"
+        }
+      ]
+    },
+    "jump_attack": {
+      "frames": [
+        {
+          "frame": "kick.0"
+        },
+        {
+          "frame": "kick.1"
+        }
+      ]
+    },
+    "jump_in_out": {
+      "frames": [
+        {
+          "frame": "jump.00"
+        }
+      ]
+    },
+    "jump_old": {
+      "frames": [
+        {
+          "frame": "jump.1",
+          "delay": 8
+        },
+        {
+          "frame": "jump.2",
+          "delay": 4
+        },
+        {
+          "frame": "jump.1"
+        }
+      ]
+    },
+    "leap": {
+      "frames": [
+        {
+          "frame": "jump.00"
+        },
+        {
+          "frame": "jump.01"
+        },
+        {
+          "frame": "leap.00"
+        },
+        {
+          "frame": "leap.01"
+        },
+        {
+          "frame": "leap.02"
+        },
+        {
+          "frame": "leap.03"
+        },
+        {
+          "frame": "jump.01"
+        }
+      ]
+    },
+    "leap_attack": {
+      "frames": [
+        {
+          "frame": "special.0"
+        },
+        {
+          "frame": "special.1"
+        },
+        {
+          "frame": "special.2"
+        }
+      ]
+    },
+    "pickup": {
+      "frames": [
+        {
+          "frame": "pickup.0",
+          "delay": 5
+        }
+      ]
+    },
+    "punch": {
+      "frames": [
+        {
+          "frame": "punch.01"
+        },
+        {
+          "frame": "punch.03"
+        },
+        {
+          "frame": "punch.05",
+          "delay": 2
+        }
+      ]
+    },
+    "punch_low": {
+      "frames": [
+        {
+          "frame": "punch_low.01"
+        },
+        {
+          "frame": "punch_low.03"
+        },
+        {
+          "frame": "punch_low.05"
+        },
+        {
+          "frame": "punch_low.07"
+        },
+        {
+          "frame": "punch_low.09",
+          "delay": 2
+        }
+      ]
+    },
+    "raise": {
+      "frames": [
+        {
+          "frame": "ground.0",
+          "delay": 30
+        },
+        {
+          "frame": "ground.1",
+          "delay": 3
+        },
+        {
+          "frame": "ground.0",
+          "delay": 3
+        },
+        {
+          "frame": "ground.1",
+          "delay": 2
+        },
+        {
+          "frame": "pickup.0",
+          "delay": 2
+        }
+      ]
+    },
+    "special": {
+      "frames": [
+        {
+          "frame": "special.0"
+        },
+        {
+          "frame": "special.1"
+        },
+        {
+          "frame": "special.2"
+        },
+        {
+          "frame": "special.3"
+        },
+        {
+          "frame": "special.4"
+        },
+        {
+          "frame": "special.5"
+        }
+      ]
+    },
+    "stab": {
+      "frames": [
+        {
+          "frame": "stab.0"
+        },
+        {
+          "frame": "stab.1"
+        }
+      ]
+    },
+    "stand": {
+      "frames": [
+        {
+          "frame": "stand.00",
+          "delay": 2
+        },
+        {
+          "frame": "stand.01",
+          "delay": 2
+        },
+        {
+          "frame": "stand.02",
+          "delay": 2
+        },
+        {
+          "frame": "stand.03",
+          "delay": 2
+        },
+        {
+          "frame": "stand.04",
+          "delay": 2
+        },
+        {
+          "frame": "stand.05",
+          "delay": 2
+        },
+        {
+          "frame": "stand.06",
+          "delay": 2
+        },
+        {
+          "frame": "stand.07",
+          "delay": 2
+        },
+        {
+          "frame": "stand.08",
+          "delay": 2
+        },
+        {
+          "frame": "stand.09",
+          "delay": 2
+        },
+        {
+          "frame": "stand.10",
+          "delay": 2
+        },
+        {
+          "frame": "stand.11",
+          "delay": 2
+        },
+        {
+          "frame": "stand.12",
+          "delay": 2
+        }
+      ]
+    },
+    "walk": {
+      "frames": [
+        {
+          "frame": "walk.00"
+        },
+        {
+          "frame": "walk.01"
+        },
+        {
+          "frame": "walk.02"
+        },
+        {
+          "frame": "walk.03"
+        },
+        {
+          "frame": "walk.04"
+        },
+        {
+          "frame": "walk.05"
+        },
+        {
+          "frame": "walk.06"
+        },
+        {
+          "frame": "walk.07"
+        },
+        {
+          "frame": "walk.08"
+        },
+        {
+          "frame": "walk.09"
+        },
+        {
+          "frame": "walk.10"
+        },
+        {
+          "frame": "walk.11"
+        },
+        {
+          "frame": "walk.12"
+        },
+        {
+          "frame": "walk.13"
+        },
+        {
+          "frame": "walk.14"
+        },
+        {
+          "frame": "walk.15"
+        },
+        {
+          "frame": "walk.16"
+        }
+      ]
+    }
+  },
+  "frames": {
+    "dive_kick.0": {
+      "anchor": {
+        "x": 29.0,
+        "y": 74.0
+      },
+      "hit_box": {
+        "x": -15,
+        "y": -67,
+        "width": 34,
+        "height": 39
+      },
+      "attack_box": {
+        "x": -19,
+        "y": -28,
+        "width": 47,
+        "height": 17
+      },
+      "image_file": "dive_kick.0.png"
+    },
+    "fall.0": {
+      "anchor": {
+        "x": 39.0,
+        "y": 70.0
+      },
+      "image_file": "fall.0.png"
+    },
+    "grab.0": {
+      "anchor": {
+        "x": 31.0,
+        "y": 68.0
+      },
+      "hit_box": {
+        "x": 2,
+        "y": 8,
+        "width": 43,
+        "height": 56
+      },
+      "image_file": "grab.0.png"
+    },
+    "grab.1": {
+      "anchor": {
+        "x": 28.0,
+        "y": 61.0
+      },
+      "hit_box": {
+        "x": 8,
+        "y": 1,
+        "width": 43,
+        "height": 45
+      },
+      "image_file": "grab.1.png"
+    },
+    "ground.0": {
+      "anchor": {
+        "x": 48.0,
+        "y": 31.0
+      },
+      "image_file": "ground.0.png"
+    },
+    "ground.1": {
+      "anchor": {
+        "x": 38.0,
+        "y": 32.0
+      },
+      "image_file": "ground.1.png"
+    },
+    "hurt.0": {
+      "anchor": {
+        "x": 16.0,
+        "y": 92.0
+      },
+      "image_file": "hurt.0.png"
+    },
+    "jump.00": {
+      "anchor": {
+        "x": 33.0,
+        "y": 226.0
+      },
+      "image_file": "jump.00.png"
+    },
+    "jump.01": {
+      "anchor": {
+        "x": 33.0,
+        "y": 250.0
+      },
+      "image_file": "jump.01.png"
+    },
+    "jump.02": {
+      "anchor": {
+        "x": 33.0,
+        "y": 274.0
+      },
+      "image_file": "jump.02.png"
+    },
+    "jump.03": {
+      "anchor": {
+        "x": 32.0,
+        "y": 248.0
+      },
+      "image_file": "jump.03.png"
+    },
+    "jump.04": {
+      "anchor": {
+        "x": 32.0,
+        "y": 249.0
+      },
+      "image_file": "jump.04.png"
+    },
+    "kick.0": {
+      "anchor": {
+        "x": 21.0,
+        "y": 91.0
+      },
+      "hit_box": {
+        "x": -13,
+        "y": -83,
+        "width": 28,
+        "height": 49
+      },
+      "image_file": "kick.0.png"
+    },
+    "kick.1": {
+      "anchor": {
+        "x": 29.0,
+        "y": 102.0
+      },
+      "hit_box": {
+        "x": -16,
+        "y": -85,
+        "width": 28,
+        "height": 52
+      },
+      "attack_box": {
+        "x": 13,
+        "y": -104,
+        "width": 29,
+        "height": 75
+      },
+      "image_file": "kick.1.png"
+    },
+    "leap.00": {
+      "anchor": {
+        "x": 38.0,
+        "y": 218.0
+      },
+      "image_file": "leap.00.png"
+    },
+    "leap.01": {
+      "anchor": {
+        "x": 48.0,
+        "y": 229.0
+      },
+      "image_file": "leap.01.png"
+    },
+    "leap.02": {
+      "anchor": {
+        "x": 39.0,
+        "y": 239.0
+      },
+      "image_file": "leap.02.png"
+    },
+    "leap.03": {
+      "anchor": {
+        "x": 43.0,
+        "y": 228.0
+      },
+      "image_file": "leap.03.png"
+    },
+    "pickup.0": {
+      "anchor": {
+        "x": 24.0,
+        "y": 56.0
+      },
+      "image_file": "pickup.0.png"
+    },
+    "punch.00": {
+      "anchor": {
+        "x": 34.0,
+        "y": 252.0
+      },
+      "hit_box": {
+        "x": -15,
+        "y": -82,
+        "width": 40,
+        "height": 80
+      },
+      "image_file": "punch.00.png"
+    },
+    "punch.01": {
+      "anchor": {
+        "x": 34.0,
+        "y": 251.0
+      },
+      "hit_box": {
+        "x": -17,
+        "y": -205,
+        "width": 45,
+        "height": 95
+      },
+      "image_file": "punch.01.png"
+    },
+    "punch.02": {
+      "anchor": {
+        "x": 34.0,
+        "y": 251.0
+      },
+      "hit_box": {
+        "x": -15,
+        "y": -82,
+        "width": 40,
+        "height": 80
+      },
+      "attack_box": {
+        "x": 44,
+        "y": -84,
+        "width": 24,
+        "height": 20
+      },
+      "image_file": "punch.02.png"
+    },
+    "punch.03": {
+      "anchor": {
+        "x": 34.0,
+        "y": 248.0
+      },
+      "hit_box": {
+        "x": -15,
+        "y": -82,
+        "width": 40,
+        "height": 80
+      },
+      "attack_box": {
+        "x": 52,
+        "y": -231,
+        "width": 52,
+        "height": 28
+      },
+      "image_file": "punch.03.png"
+    },
+    "punch.04": {
+      "anchor": {
+        "x": 34.0,
+        "y": 243.0
+      },
+      "hit_box": {
+        "x": -15,
+        "y": -82,
+        "width": 40,
+        "height": 80
+      },
+      "attack_box": {
+        "x": 44,
+        "y": -84,
+        "width": 24,
+        "height": 20
+      },
+      "image_file": "punch.04.png"
+    },
+    "punch.05": {
+      "anchor": {
+        "x": 37.0,
+        "y": 238.0
+      },
+      "hit_box": {
+        "x": -15,
+        "y": -82,
+        "width": 40,
+        "height": 80
+      },
+      "attack_box": {
+        "x": 55,
+        "y": -226,
+        "width": 87,
+        "height": 33
+      },
+      "image_file": "punch.05.png"
+    },
+    "punch_low.00": {
+      "anchor": {
+        "x": 35.0,
+        "y": 251.0
+      },
+      "hit_box": {
+        "x": -22,
+        "y": -214,
+        "width": 46,
+        "height": 116
+      },
+      "image_file": "punch_low.00.png"
+    },
+    "punch_low.01": {
+      "anchor": {
+        "x": 35.0,
+        "y": 250.0
+      },
+      "hit_box": {
+        "x": -20,
+        "y": -215,
+        "width": 47,
+        "height": 131
+      },
+      "image_file": "punch_low.01.png"
+    },
+    "punch_low.03": {
+      "anchor": {
+        "x": 35.0,
+        "y": 241.0
+      },
+      "hit_box": {
+        "x": -13,
+        "y": -203,
+        "width": 45,
+        "height": 116
+      },
+      "image_file": "punch_low.03.png"
+    },
+    "punch_low.05": {
+      "anchor": {
+        "x": 35.0,
+        "y": 234.0
+      },
+      "hit_box": {
+        "x": -2,
+        "y": -203,
+        "width": 37,
+        "height": 125
+      },
+      "image_file": "punch_low.05.png"
+    },
+    "punch_low.07": {
+      "anchor": {
+        "x": 35.0,
+        "y": 238.0
+      },
+      "hit_box": {
+        "x": -5,
+        "y": -208,
+        "width": 41,
+        "height": 125
+      },
+      "attack_box": {
+        "x": 55,
+        "y": -148,
+        "width": 53,
+        "height": 29
+      },
+      "image_file": "punch_low.07.png"
+    },
+    "punch_low.09": {
+      "anchor": {
+        "x": 35.0,
+        "y": 238.0
+      },
+      "hit_box": {
+        "x": -10,
+        "y": -208,
+        "width": 46,
+        "height": 117
+      },
+      "attack_box": {
+        "x": 70,
+        "y": -182,
+        "width": 66,
+        "height": 40
+      },
+      "image_file": "punch_low.09.png"
+    },
+    "special.0": {
+      "anchor": {
+        "x": 54.0,
+        "y": 86.0
+      },
+      "hit_box": {
+        "x": -24,
+        "y": -84,
+        "width": 28,
+        "height": 71
+      },
+      "image_file": "special.0.png"
+    },
+    "special.1": {
+      "anchor": {
+        "x": 39.0,
+        "y": 97.0
+      },
+      "hit_box": {
+        "x": -17,
+        "y": -93,
+        "width": 30,
+        "height": 69
+      },
+      "image_file": "special.1.png"
+    },
+    "special.2": {
+      "anchor": {
+        "x": 38.0,
+        "y": 100.0
+      },
+      "hit_box": {
+        "x": -17,
+        "y": -99,
+        "width": 32,
+        "height": 58
+      },
+      "attack_box": {
+        "x": 14,
+        "y": -69,
+        "width": 73,
+        "height": 25
+      },
+      "image_file": "special.2.png"
+    },
+    "special.3": {
+      "anchor": {
+        "x": 21.0,
+        "y": 100.0
+      },
+      "hit_box": {
+        "x": -17,
+        "y": -96,
+        "width": 31,
+        "height": 56
+      },
+      "image_file": "special.3.png"
+    },
+    "special.4": {
+      "anchor": {
+        "x": 59.0,
+        "y": 97.0
+      },
+      "hit_box": {
+        "x": -20,
+        "y": -98,
+        "width": 41,
+        "height": 61
+      },
+      "attack_box": {
+        "x": -63,
+        "y": -64,
+        "width": 45,
+        "height": 19
+      },
+      "image_file": "special.4.png"
+    },
+    "special.5": {
+      "anchor": {
+        "x": 35.0,
+        "y": 93.0
+      },
+      "hit_box": {
+        "x": -17,
+        "y": -91,
+        "width": 41,
+        "height": 61
+      },
+      "attack_box": {
+        "x": -5,
+        "y": -60,
+        "width": 35,
+        "height": 19
+      },
+      "image_file": "special.5.png"
+    },
+    "stab.0": {
+      "anchor": {
+        "x": 42.0,
+        "y": 79.0
+      },
+      "hit_box": {
+        "x": -18,
+        "y": -71,
+        "width": 41,
+        "height": 68
+      },
+      "image_file": "stab.0.png"
+    },
+    "stab.1": {
+      "anchor": {
+        "x": 40.0,
+        "y": 74.0
+      },
+      "hit_box": {
+        "x": -11,
+        "y": -68,
+        "width": 45,
+        "height": 66
+      },
+      "attack_box": {
+        "x": 53,
+        "y": -55,
+        "width": 34,
+        "height": 19
+      },
+      "image_file": "stab.1.png"
+    },
+    "stand.00": {
+      "anchor": {
+        "x": 35.0,
+        "y": 249.0
+      },
+      "hit_box": {
+        "x": -21,
+        "y": -208,
+        "width": 49,
+        "height": 111
+      },
+      "image_file": "stand.00.png"
+    },
+    "stand.01": {
+      "anchor": {
+        "x": 36.0,
+        "y": 250.0
+      },
+      "hit_box": {
+        "x": -15,
+        "y": -86,
+        "width": 38,
+        "height": 83
+      },
+      "image_file": "stand.01.png"
+    },
+    "stand.02": {
+      "anchor": {
+        "x": 37.0,
+        "y": 252.0
+      },
+      "hit_box": {
+        "x": -15,
+        "y": -86,
+        "width": 38,
+        "height": 83
+      },
+      "image_file": "stand.02.png"
+    },
+    "stand.03": {
+      "anchor": {
+        "x": 37.0,
+        "y": 253.0
+      },
+      "hit_box": {
+        "x": -15,
+        "y": -86,
+        "width": 38,
+        "height": 83
+      },
+      "image_file": "stand.03.png"
+    },
+    "stand.04": {
+      "anchor": {
+        "x": 37.0,
+        "y": 253.0
+      },
+      "hit_box": {
+        "x": -15,
+        "y": -86,
+        "width": 38,
+        "height": 83
+      },
+      "image_file": "stand.04.png"
+    },
+    "stand.05": {
+      "anchor": {
+        "x": 36.0,
+        "y": 253.0
+      },
+      "hit_box": {
+        "x": -15,
+        "y": -86,
+        "width": 38,
+        "height": 83
+      },
+      "image_file": "stand.05.png"
+    },
+    "stand.06": {
+      "anchor": {
+        "x": 36.0,
+        "y": 252.0
+      },
+      "hit_box": {
+        "x": -15,
+        "y": -86,
+        "width": 38,
+        "height": 83
+      },
+      "image_file": "stand.06.png"
+    },
+    "stand.07": {
+      "anchor": {
+        "x": 35.0,
+        "y": 250.0
+      },
+      "hit_box": {
+        "x": -15,
+        "y": -86,
+        "width": 38,
+        "height": 83
+      },
+      "image_file": "stand.07.png"
+    },
+    "stand.08": {
+      "anchor": {
+        "x": 35.0,
+        "y": 249.0
+      },
+      "hit_box": {
+        "x": -15,
+        "y": -86,
+        "width": 38,
+        "height": 83
+      },
+      "image_file": "stand.08.png"
+    },
+    "stand.09": {
+      "anchor": {
+        "x": 35.0,
+        "y": 248.0
+      },
+      "hit_box": {
+        "x": -15,
+        "y": -86,
+        "width": 38,
+        "height": 83
+      },
+      "image_file": "stand.09.png"
+    },
+    "stand.10": {
+      "anchor": {
+        "x": 35.0,
+        "y": 246.0
+      },
+      "hit_box": {
+        "x": -15,
+        "y": -86,
+        "width": 38,
+        "height": 83
+      },
+      "image_file": "stand.10.png"
+    },
+    "stand.11": {
+      "anchor": {
+        "x": 35.0,
+        "y": 246.0
+      },
+      "hit_box": {
+        "x": -15,
+        "y": -86,
+        "width": 38,
+        "height": 83
+      },
+      "image_file": "stand.11.png"
+    },
+    "stand.12": {
+      "anchor": {
+        "x": 35.0,
+        "y": 247.0
+      },
+      "hit_box": {
+        "x": -15,
+        "y": -86,
+        "width": 38,
+        "height": 83
+      },
+      "image_file": "stand.12.png"
+    },
+    "throw.0": {
+      "anchor": {
+        "x": 24.0,
+        "y": 80.0
+      },
+      "hit_box": {
+        "x": 3,
+        "y": 0,
+        "width": 39,
+        "height": 78
+      },
+      "image_file": "throw.0.png"
+    },
+    "throw.1": {
+      "anchor": {
+        "x": 17.0,
+        "y": 74.0
+      },
+      "hit_box": {
+        "x": 1,
+        "y": 2,
+        "width": 34,
+        "height": 68
+      },
+      "image_file": "throw.1.png"
+    },
+    "walk.00": {
+      "anchor": {
+        "x": 39.0,
+        "y": 255.0
+      },
+      "image_file": "walk.00.png"
+    },
+    "walk.01": {
+      "anchor": {
+        "x": 40.0,
+        "y": 254.0
+      },
+      "image_file": "walk.01.png"
+    },
+    "walk.02": {
+      "anchor": {
+        "x": 49.0,
+        "y": 253.0
+      },
+      "image_file": "walk.02.png"
+    },
+    "walk.03": {
+      "anchor": {
+        "x": 59.0,
+        "y": 252.0
+      },
+      "image_file": "walk.03.png"
+    },
+    "walk.04": {
+      "anchor": {
+        "x": 69.0,
+        "y": 255.0
+      },
+      "image_file": "walk.04.png"
+    },
+    "walk.05": {
+      "anchor": {
+        "x": 73.0,
+        "y": 258.0
+      },
+      "image_file": "walk.05.png"
+    },
+    "walk.06": {
+      "anchor": {
+        "x": 64.0,
+        "y": 260.0
+      },
+      "image_file": "walk.06.png"
+    },
+    "walk.07": {
+      "anchor": {
+        "x": 45.0,
+        "y": 261.0
+      },
+      "image_file": "walk.07.png"
+    },
+    "walk.08": {
+      "anchor": {
+        "x": 26.0,
+        "y": 261.0
+      },
+      "image_file": "walk.08.png"
+    },
+    "walk.09": {
+      "anchor": {
+        "x": 35.0,
+        "y": 259.0
+      },
+      "image_file": "walk.09.png"
+    },
+    "walk.10": {
+      "anchor": {
+        "x": 46.0,
+        "y": 258.0
+      },
+      "image_file": "walk.10.png"
+    },
+    "walk.11": {
+      "anchor": {
+        "x": 55.0,
+        "y": 257.0
+      },
+      "image_file": "walk.11.png"
+    },
+    "walk.12": {
+      "anchor": {
+        "x": 63.0,
+        "y": 256.0
+      },
+      "image_file": "walk.12.png"
+    },
+    "walk.13": {
+      "anchor": {
+        "x": 69.0,
+        "y": 256.0
+      },
+      "image_file": "walk.13.png"
+    },
+    "walk.14": {
+      "anchor": {
+        "x": 65.0,
+        "y": 256.0
+      },
+      "image_file": "walk.14.png"
+    },
+    "walk.15": {
+      "anchor": {
+        "x": 42.0,
+        "y": 255.0
+      },
+      "image_file": "walk.15.png"
+    },
+    "walk.16": {
+      "anchor": {
+        "x": 27.0,
+        "y": 256.0
+      },
+      "image_file": "walk.16.png"
+    }
+  }
+}
