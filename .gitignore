@@ -9,4 +9,4 @@ __pycache__/
 venv/
 ENV/
 
-.idea
+.idea/
