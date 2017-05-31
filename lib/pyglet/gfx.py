@@ -32,8 +32,8 @@ class Gfx:
     def load_image(file_name):
         # print("[Gfx] Loading image '%s'" % file_name)
         new_image = Image()
-        # new_image.pyglet_image = pyglet.image.load(file_name)
-        new_image.pyglet_image = pyglet.image.load(file_name, decoder=PNGImageDecoder())
+        new_image.pyglet_image = pyglet.image.load(file_name)
+        # new_image.pyglet_image = pyglet.image.load(file_name, decoder=PNGImageDecoder())
         new_image.texture = new_image.pyglet_image.get_texture()
         return new_image
 
