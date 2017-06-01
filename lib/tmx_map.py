@@ -4,7 +4,7 @@ from pytmx.util_pyglet import load_pyglet
 from lib.pyglet.gfx import Gfx
 
 
-class TiledMap(object):
+class TMXMap(object):
     def __init__(self, filename):
         tm = load_pyglet(filename)
         self.size = tm.width * tm.tilewidth, tm.height * tm.tileheight
