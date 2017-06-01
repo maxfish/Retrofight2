@@ -1,144 +1,92 @@
-import logging
-
-logger = logging.getLogger(__name__)
-ch = logging.StreamHandler()
-ch.setLevel(logging.INFO)
-logger.addHandler(ch)
-logger.setLevel(logging.INFO)
-
-from pytmx import *
-from pytmx.util_pyglet import load_pyglet
+#!/usr/bin/env python
 import pyglet
-from pyglet import gl
+from pyglet.gl import *
+
+from game.player import Player
+from game.stage_1 import Stage1
+from game.world import World
+from lib.pyglet.gamepad import GamePad
+from lib.pyglet.gfx import Gfx
+from lib.pyglet.shaders_manager import ShadersManager
+from lib.rect import Rect
+from lib.tiled_map import TMXMap
+
+pyglet.options['shadow_window'] = False
+
+config = pyglet.gl.Config(double_buffer=True,
+                          depth_size=24,
+                          major_version=2,
+                          minor_version=1,
+                          forward_compatible=True)
+window = pyglet.window.Window(width=640, height=480, config=config)
+
+# Print the version of the context created.
+print('OpenGL version:', window.context.get_info().get_version())
+print('OpenGL 2.1 support:', window.context.get_info().have_version(2, 1))
+
+Gfx.screen_width = window.width
+Gfx.screen_height = window.height
+Gfx.initialize()
+pyglet.gl.glClearColor(0, 0, 0, 0)
+window.clear()
+
+# shader = ShadersManager()
+# shader.test()
+
+map = TMXMap('resources/stages/stage_1/stage_1.tmx')
 
 
-class TiledRenderer(object):
-    """
-    Super simple way to render a tiled map with pyglet
+# =================================
 
-    no shape drawing yet
-    """
+joysticks = GamePad.available_joysticks()
+print("Joysticks available: %d" % len(joysticks))
+gamepads = [GamePad(j) for j in joysticks]
 
-    def __init__(self, filename):
-        tm = load_pyglet(filename)
-        self.size = tm.width * tm.tilewidth, tm.height * tm.tileheight
-        self.tmx_data = tm
-        self.batches = []  # list of batches, e.g. layers
-        self.sprites = []  # container for tiles
-        self.generate_sprites()
-        self.clock_display = pyglet.clock.ClockDisplay()
+# ================================
 
-    def draw_rect(self, color, rect, width):
-        pass
-
-    def draw_lines(self, color, closed, points, width):
-        pass
-
-    def generate_sprites(self):
-        tw = self.tmx_data.tilewidth
-        th = self.tmx_data.tileheight
-        mw = self.tmx_data.width
-        mh = self.tmx_data.height - 1
-        pixel_height = (mh + 1) * th
-        draw_rect = self.draw_rect
-        draw_lines = self.draw_lines
-
-        rect_color = (255, 0, 0)
-        poly_color = (0, 255, 0)
-
-        for layer in self.tmx_data.visible_layers:
-            # batch = pyglet.graphics.Batch()  # create a new batch
-            # self.batches.append(batch)  # add the batch to the list
-            # draw map tile layers
-            if isinstance(layer, TiledTileLayer):
-
-                # iterate over the tiles in the layer
-                for x, y, image in layer.tiles():
-                    y = mh - y
-                    x = x * tw
-                    y = y * th
-                    # TODO
-
-            # draw object layers
-            elif isinstance(layer, TiledObjectGroup):
-
-                # iterate over all the objects in the layer
-                for obj in layer:
-                    logger.info(obj)
-
-                    # objects with points are polygons or lines
-                    if hasattr(obj, 'points'):
-                        draw_lines(poly_color, obj.closed, obj.points, 3)
-
-                    # some object have an image
-                    elif obj.image:
-                        # obj.image.blit(0,0)
-                        if obj.x >= 0 and obj.x < 600 and obj.y >=-0 and obj.y< 600:
-                            obj.image.blit(obj.x, 600 - obj.y - obj.height)
-
-                    # draw a rect for everything else
-                    else:
-                        draw_rect(rect_color,
-                                  (obj.x, obj.y, obj.width, obj.height), 3)
-
-            # draw image layers
-            elif isinstance(layer, TiledImageLayer):
-                if layer.image:
-                    x = mw // 2  # centers image
-                    y = mh // 2
-                    # TODO
-
-    def draw(self):
-        self.generate_sprites()
-        self.clock_display.draw()
+world = World(
+    bounds=Rect(0, 200, 600, 400),
+    stage=Stage1(),
+)
 
 
-class SimpleTest(object):
-    def __init__(self, filename):
-        self.renderer = None
-        self.running = False
-        self.dirty = False
-        self.exit_status = 0
-        self.load_map(filename)
-
-    def load_map(self, filename):
-        self.renderer = TiledRenderer(filename)
-
-        logger.info("Objects in map:")
-        for obj in self.renderer.tmx_data.objects:
-            logger.info(obj)
-            for k, v in obj.properties.items():
-                logger.info("%s\t%s", k, v)
-
-        logger.info("GID (tile) properties:")
-        for k, v in self.renderer.tmx_data.tile_properties.items():
-            logger.info("%s\t%s", k, v)
-
-    def draw(self):
-        self.renderer.draw()
+def add_players(
+        world,
+        gamepads,
+        sprites=(
+                # sprite,  footprint, posx, posy
+                ('max', Player.DEFAULT_FOOTPRINT_DIM, 130, 245),
+                ('haggar', Rect(0, 0, 50, 12), 160, 230),
+                ('guy', Player.DEFAULT_FOOTPRINT_DIM, 200, 260),
+        ),
+):
+    for num, gamepad in enumerate(gamepads):
+        sprite, footprint, posx, posy = sprites[num]
+        world.add_player(
+            Player(num, world, gamepad, sprite, posx, posy, footprint_dim=footprint),
+        )
 
 
-class TestWindow(pyglet.window.Window):
-    contents = None
-
-    def on_draw(self):
-        self.clear()
-        if self.contents:
-            self.contents.draw()
-
-    def on_key_press(self, symbol, mod):
-        if symbol == pyglet.window.key.ESCAPE:
-            pyglet.app.exit()
+add_players(world, gamepads)
 
 
-if __name__ == '__main__':
-    contents = SimpleTest('resources/stages/stage_1/stage_1.tmx')
+def update_frames(dt):
+    for p in world.players:
+        p.handle_input()
+    world.update(1)
 
-    window = TestWindow(600, 600, vsync=False)
-    window.contents = contents
-    gl.glEnable(gl.GL_BLEND)
-    gl.glBlendFunc(gl.GL_SRC_ALPHA, gl.GL_ONE_MINUS_SRC_ALPHA)
 
-    # Add schedule_interval with a dummy callable to force speeding up fps
-    pyglet.clock.schedule_interval(int, 1. / 240)
-    pyglet.app.run()
+fps_display = pyglet.clock.ClockDisplay()
+
+
+@window.event
+def on_draw():
+    pyglet.gl.glClearColor(0, 0, 0, 0)
+    window.clear()
+    world.draw(None)
+    fps_display.draw()
+    map.draw()
+
+
+pyglet.clock.schedule_interval(update_frames, 1.0 / 30)
+pyglet.app.run()
