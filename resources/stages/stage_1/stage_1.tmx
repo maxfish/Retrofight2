@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="400" height="34" tilewidth="32" tileheight="32" nextobjectid="43">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="34" tilewidth="32" tileheight="32" nextobjectid="43">
  <tileset firstgid="1" name="background_far" tilewidth="1800" tileheight="181" tilecount="1" columns="0">
   <tile id="0">
    <image width="1800" height="181" source="bg_far.png"/>
@@ -25,7 +25,7 @@
   </tile>
  </tileset>
  <objectgroup name="background_2" offsetx="1" offsety="0">
-  <object id="23" gid="1" x="0" y="214" width="1800" height="181"/>
+  <object id="23" gid="1" x="0" y="214" width="1919" height="181"/>
  </objectgroup>
  <objectgroup name="train">
   <object id="28" gid="6" x="0" y="216" width="2544" height="148"/>

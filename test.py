@@ -4,12 +4,11 @@ from pyglet.gl import *
 
 from game.player import Player
 from game.stage_1 import Stage1
+from game.stage_2 import Stage2
 from game.world import World
 from lib.pyglet.gamepad import GamePad
 from lib.pyglet.gfx import Gfx
-from lib.pyglet.shaders_manager import ShadersManager
 from lib.rect import Rect
-from lib.tiled_map import TMXMap
 
 pyglet.options['shadow_window'] = False
 
@@ -17,8 +16,10 @@ config = pyglet.gl.Config(double_buffer=True,
                           depth_size=24,
                           major_version=2,
                           minor_version=1,
-                          forward_compatible=True)
-window = pyglet.window.Window(width=640, height=480, config=config)
+                          forward_compatible=True
+                          )
+window = pyglet.window.Window(width=1920, height=1080, config=config)
+# window.set_fullscreen(True)
 
 # Print the version of the context created.
 print('OpenGL version:', window.context.get_info().get_version())
@@ -33,7 +34,6 @@ window.clear()
 # shader = ShadersManager()
 # shader.test()
 
-map = TMXMap('resources/stages/stage_1/stage_1.tmx')
 
 
 # =================================
@@ -85,8 +85,8 @@ def on_draw():
     window.clear()
     world.draw(None)
     fps_display.draw()
-    map.draw()
 
 
-pyglet.clock.schedule_interval(update_frames, 1.0 / 30)
+pyglet.clock.set_fps_limit(60)
+pyglet.clock.schedule(update_frames)
 pyglet.app.run()
