@@ -1,4 +1,7 @@
 {
+  "meta": {
+    "fps": 30
+  },
   "animations": {
     "dive_attack": {
       "frames": [
