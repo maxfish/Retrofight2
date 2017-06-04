@@ -7,7 +7,7 @@ from lib.vector2d import Vector2d
 
 class TMXMap(object):
     def __init__(self, filename):
-        tm = pytmx.util_pyglet.load_pyglet(filename)
+        tm = pytmx.util_pyglet.load_pyglet(filename, invert_y=False)
         self.size = tm.width * tm.tilewidth, tm.height * tm.tileheight
         self.tmx_data = tm
         self.layer_offsets = [Vector2d(0, 0) for _ in range(0, len(self.tmx_data.layers))]
@@ -38,7 +38,9 @@ class TMXMap(object):
                         # draw_lines(poly_color, obj.closed, obj.points, 3)
                         pass
                     elif obj.image:
-                        obj.image.blit(obj.x - offset_x, Gfx.screen_height - obj.y - obj.height - offset_y)
+                        w = (obj.image.texture.width / obj.image.width) * obj.width
+                        h = (obj.image.height / obj.image.texture.height) * obj.height
+                        obj.image.blit(obj.x - offset_x, (Gfx.screen_height - obj.y) - offset_y, 0, w, h)
                     else:
                         # draw_rect(rect_color, (obj.x, obj.y, obj.width, obj.height), 3)
                         pass
