@@ -9,6 +9,7 @@ from lib.rect import Rect
 
 
 class FramesStore:
+    DEFAULT_FPS = 30
     FLAG_FLIP_X = 1
     FLAG_FLIP_Y = 2
     FLAG_CENTER_X = 4
@@ -19,6 +20,7 @@ class FramesStore:
         self.images = {}
         self.frames = {}
         self.animations = {}
+        self.animation_fps = self.DEFAULT_FPS
 
     def load(self, path, file_name):
         print("[FramesStore] Loading '%s/%s'" % (path, file_name))
@@ -26,6 +28,12 @@ class FramesStore:
         json_data = open(os.path.join(path, file_name))
         data = json.load(json_data)
         json_data.close()
+
+        meta = data.get('meta')
+        if meta:
+            fps = meta.get('fps')
+            if fps:
+                self.animation_fps = fps
 
         for animation_name in data['animations']:
             animation_data = data['animations'][animation_name]
