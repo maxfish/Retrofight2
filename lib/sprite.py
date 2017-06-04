@@ -4,8 +4,8 @@ from lib.frames_store import FramesStore
 class Sprite:
     DEBUG = False
 
-    def __init__(self, sprite_bank):
-        self.sprite_bank = sprite_bank
+    def __init__(self, frames_store):
+        self.frames_store = frames_store
         self.x = self.y = 0
         self.flags = 0
         self.frame = None
@@ -40,7 +40,7 @@ class Sprite:
         # if animation_frame.offset.y != 0:
         #     dest_x += animation_frame.offset.y
 
-        self.sprite_bank.draw_frame(surface, self.frame, dest_x, dest_y, flags)
+        self.frames_store.draw_frame(surface, self.frame, dest_x, dest_y, flags)
 
         # DEBUG boxes
         if Sprite.DEBUG:
@@ -58,7 +58,7 @@ class Sprite:
     def set_frame(self, frame_name):
         self.stop_animation()
         self.animation = None
-        self.frame = self.sprite_bank.get_frame(frame_name)
+        self.frame = self.frames_store.get_frame(frame_name)
 
     def stop_animation(self):
         self.animation_frame_delay = 0
@@ -115,11 +115,11 @@ class Sprite:
         self._set_animation_frame(new_animation_frame_index)
 
     def _set_animation_frame(self, frame_index):
-        self.animation = self.sprite_bank.get_animation(self.animation_name)
+        self.animation = self.frames_store.get_animation(self.animation_name)
         self.animation_frame_index = frame_index
         new_frame = self.animation.frames[frame_index]
         self.animation_frame_delay = new_frame.delay
-        self.frame = self.sprite_bank.get_frame(new_frame.frame_name)
+        self.frame = self.frames_store.get_frame(new_frame.frame_name)
 
     def _update_collision_boxes(self):
         # NOTE: this crashes when there is no animation running
