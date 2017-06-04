@@ -18,7 +18,7 @@ config = pyglet.gl.Config(double_buffer=True,
                           minor_version=1,
                           forward_compatible=True
                           )
-window = pyglet.window.Window(width=1920, height=1080, config=config)
+window = pyglet.window.Window(width=1280, height=720, config=config)
 # window.set_fullscreen(True)
 
 # Print the version of the context created.
@@ -46,7 +46,7 @@ gamepads = [GamePad(j) for j in joysticks]
 
 world = World(
     bounds=Rect(0, 200, 600, 400),
-    stage=Stage1(),
+    stage=Stage2(),
 )
 
 
