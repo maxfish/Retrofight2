@@ -1,2 +1,2 @@
 pyglet==1.2.4
-git+https://github.com/maxfish/PyTMX.git@access_to_layers_offset#egg=PyTMX
+git+https://github.com/maxfish/PyTMX.git#egg=PyTMX
