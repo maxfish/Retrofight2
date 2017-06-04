@@ -17,7 +17,7 @@ DEBUG = 0
 
 # noinspection PyAttributeOutsideInit
 class World:
-    MAX_ENEMIES_ON_SCREEN = 40
+    MAX_ENEMIES_ON_SCREEN = 1
     MAX_CORPSES_ON_THE_FLOOR = 30
 
     SCENE_TITLE = 0
@@ -228,6 +228,7 @@ class World:
         return [p[0] for p in sorted_players]
 
     def spawn_initial_enemies(self):
+        return
         for _ in range(4):
             enemy = self.spawn_random_enemy(probability_of_left=0)
             direction = 1 if enemy.position.x < self.bounds.center_x else -1
