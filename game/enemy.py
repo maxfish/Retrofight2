@@ -44,12 +44,6 @@ class Enemy(Character):
             self._sprite.play_animation("punch", (FramesStore.FLAG_FLIP_X if self.direction == self.DIR_LEFT else 0))
 
     def update(self, game_speed):
-        # TITLE SCREEN
-        if self._world.scene in (self._world.SCENE_TITLE, self._world.SCENE_INTRO):
-            # update and return early, to skip game logic
-            super().update(game_speed)
-            return
-
         if self.action == self.ACTION_DIE:
             if not self._sprite.animating:
                 self._world.remove_character(self)
@@ -149,7 +143,7 @@ class Enemy(Character):
         self._world.increment_score(100)
 
     def walk_towards(self, player):
-        side_of_player = (player.position.x - self._position.x) / abs(player.position.x - self._position.x)
+        side_of_player = (player.position.x - self._position.x) / (abs(player.position.x - self._position.x) +0.01)
         position_next_to_player = Vector2d(
             player._position.x - (side_of_player * self.attack_reach * 0.8),
             player._position.y,

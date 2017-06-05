@@ -1,6 +1,5 @@
 import math
 
-from lib.vector2d import Vector2d
 from game.character import Character
 from game.entity import Entity
 from lib.controller import Controller
@@ -8,6 +7,7 @@ from lib.frames_store import FramesStore
 from lib.pyglet.gfx import Gfx
 from lib.sprite import Sprite
 from lib.utils import Utils
+from lib.vector2d import Vector2d
 
 
 class Player(Character):
@@ -24,14 +24,14 @@ class Player(Character):
 
     MAX_DISTANCE_TO_PICKUP = 20
 
-    def __init__(self, id, world, gamepad, player_name, x, y, footprint_dim=Character.DEFAULT_FOOTPRINT_DIM):
+    def __init__(self, id, world, gamepad, player_name, footprint_dim=Character.DEFAULT_FOOTPRINT_DIM):
         self.frames_store = FramesStore()
         self.frames_store.load('resources/sprites/' + player_name, 'sprites.json')
         self._sprite = Sprite(self.frames_store)
         # TODO: The face should be a frame within the sprite definition
         self.face = Gfx.load_image('resources/sprites/' + player_name + '/face.png')
 
-        super().__init__(world, self.frames_store, x, y, footprint_dim)
+        super().__init__(world, self.frames_store, 0, 0, footprint_dim)
 
         self.id = id
         self.gamepad = gamepad if gamepad else GamePad(None)
@@ -70,6 +70,7 @@ class Player(Character):
     def update(self, game_speed):
         self.change_state_to(self.current_state.update(game_speed))
         super().update(game_speed)
+        print(self.position)
 
     def draw(self, surface):
         super().draw(surface)
@@ -133,10 +134,10 @@ class PlayerState(Entity.State):
             self.p.energy = 0
             return self.p.STATE_FALL
 
-    def play_anim(self, anim_name, loop=False):
+    def play_anim(self, anim_name, loop=False, speed=1):
         self.p.sprite.play_animation(anim_name, (
             FramesStore.FLAG_FLIP_X if self.p.direction == Character.DIR_LEFT else 0) |
-                                     (FramesStore.FLAG_LOOP_ANIMATION if loop else 0))
+                                     (FramesStore.FLAG_LOOP_ANIMATION if loop else 0), speed=speed)
 
 
 class PlayerStateDead(PlayerState):
@@ -196,18 +197,6 @@ class PlayerStateStand(PlayerState):
     def handle_input(self):
         super().handle_input()
 
-        # TITLE SCREEN
-        if self.p._world.scene == self.p._world.SCENE_TITLE:
-            if self.p.gamepad.is_button_pressed('A') or self.p.gamepad.is_button_pressed('B'):
-                self.p._world.start_intro()
-            return self
-
-        # INTRO
-        if self.p._world.scene == self.p._world.SCENE_INTRO:
-            if self.p.gamepad.is_button_pressed('B'):
-                self.p._world.skip_intro()
-            return self
-
         # GAME OVER
         if self.p._world.scene == self.p._world.SCENE_GAME_OVER:
             if self.p._world.game_over_state >= 10:
@@ -253,6 +242,8 @@ class PlayerStateWalk(PlayerState):
                 and not self.p.gamepad.is_button_down('UP') and not self.p.gamepad.is_button_down('DOWN'):
             return self.p.STATE_STAND
 
+        anim_speed = 1
+
         if self.p.gamepad.is_button_down('RIGHT'):
             self.p.direction = self.p.DIR_RIGHT
             self.p.move_v.x = self.p.WALK_H_SPEED
@@ -261,10 +252,12 @@ class PlayerStateWalk(PlayerState):
             self.p.move_v.x = -self.p.WALK_H_SPEED
         elif self.p.gamepad.is_button_down('DOWN'):
             self.p.move_v.y = self.p.WALK_V_SPEED
+            anim_speed = 0.4
         elif self.p.gamepad.is_button_down('UP'):
             self.p.move_v.y = -self.p.WALK_V_SPEED
+            anim_speed = 0.4
 
-        self.play_anim("walk", loop=True)
+        self.play_anim("walk", loop=True, speed=anim_speed)
         return self
 
 

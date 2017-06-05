@@ -20,18 +20,15 @@ class World:
     MAX_ENEMIES_ON_SCREEN = 1
     MAX_CORPSES_ON_THE_FLOOR = 30
 
-    SCENE_TITLE = 0
-    SCENE_INTRO = 5
+    SCENE_NONE = 0
+    SCENE_TITLE = 1
     SCENE_GAME = 10
     SCENE_GAME_OVER = 20
     MAX_ENEMY_FORCE = 6
 
     BOSS_THRESHOLD = 5000
 
-    def __init__(self, bounds, stage, debug=0):
-        self.init(bounds, stage, debug)
-
-    def init(self, bounds, stage, debug):
+    def __init__(self, bounds, debug=0):
         self.scene = self.SCENE_TITLE
 
         self.bounds = bounds
@@ -39,8 +36,6 @@ class World:
 
         self.window_x = 0
         self.window_y = 0
-
-        self.stage = stage
 
         self.items = list()
         self.characters = list()
@@ -80,17 +75,12 @@ class World:
         self.boss_spawn_point = 0
         self.boss_spawn_count = 0
 
+    def set_stage(self, stage):
+        self.stage = stage
+
     def restart_game(self):
         # This is not enough, you need to re-init players
         self.init(self.bounds, self.stage, self.debug)
-
-    def start_intro(self):
-        self.scene = self.SCENE_INTRO
-        enemy = self.spawn_enemy_at(
-            x=self.bounds.right + 40,
-            y=self.bounds.center_y,
-        )
-        enemy.move(Vector2d(-2, 0))
 
     def skip_intro(self):
         if self.intro_state < 30:
@@ -107,6 +97,8 @@ class World:
     def add_player(self, player):
         self.players.add(player)
         self.characters.append(player)
+        player.position.x = self.stage.entity_pos('player1').x
+        player.position.y = self.stage.entity_pos('player1').y
         return player
 
     def add_enemy(self, enemy):
@@ -326,48 +318,12 @@ class World:
                 if p.action != Character.ACTION_DIE:
                     return
 
-        self.window_x += scroll_amount
-        if self.window_x + self.bounds.width > self.stage.get_width():
-            self.window_x = self.stage.get_width() - self.bounds.width
+        # self.window_x += scroll_amount
+        # if self.window_x + self.bounds.width > self.stage.get_width():
+        #     self.window_x = self.stage.get_width() - self.bounds.width
 
     def update(self, game_speed):
         self.stage.update(game_speed)
-
-        # INTRO
-        if self.scene == self.SCENE_INTRO:
-            # actors
-            self.intro_enemy = list(self.enemies)[0]
-            self.intro_player = list(self.players)[0]
-
-            if not self.intro_timer and self.intro_enemy.position.x <= 350:
-                # Enemy approached the heroes.
-                self.intro_enemy.mark_successful_action()
-                self.intro_enemy.say('TICKETS, PLEASE', time=1500)
-                self.intro_enemy.stop()
-                self.intro_timer = Utils.time_in_ms()
-
-            elif self.intro_timer:
-                # read this section from bottom to top:
-                time_elapsed = Utils.time_in_ms() - self.intro_timer
-
-                if INTRO_DEBUG:
-                    print('intro timer', time_elapsed)
-
-                if time_elapsed > 9000 and self.intro_state < 50:
-                    self.intro_state = 50
-                    self.begin()
-                elif time_elapsed > 7000 and self.intro_state < 40:
-                    self.intro_state = 40
-                    self.intro_player.say('I WARNED YOU', time=1500)
-                elif time_elapsed > 4500 and self.intro_state < 30:
-                    self.intro_state = 30
-                    self.intro_enemy.mark_successful_action()
-                    self.intro_enemy.say('LET ME INTRODUCE YOU TO MY FRIENDS', time=2000)
-                    self.spawn_initial_enemies()
-
-                elif time_elapsed > 2000 and self.intro_state < 20:
-                    self.intro_state = 20
-                    self.intro_player.say('GO AWAY, BEFORE ITS TOO LATE', time=2000)
 
         for i in self.items:
             i.update(game_speed)
@@ -400,24 +356,6 @@ class World:
             c.draw(render_surface)
 
         self.stage.draw_foreground(render_surface, self.window_x, self.window_y)
-
-        if self.scene == self.SCENE_TITLE:
-            Gfx.render_centered_text(
-                render_surface,
-                'RETRO FIGHT',
-                size=48,
-                center_x=100,  # render_surface.get_width() / 2,
-                center_y=30  # render_surface.get_height() * 0.30,
-            )
-
-            if Utils.time_in_ms() % 1000 >= 500:
-                Gfx.render_centered_text(
-                    render_surface,
-                    'insert coin',
-                    size=18,
-                    center_x=50,  # render_surface.get_width() / 2,
-                    center_y=100  # render_surface.get_height() * 0.50,
-                )
 
         if self.scene in (self.SCENE_GAME, self.SCENE_GAME_OVER):
             pass

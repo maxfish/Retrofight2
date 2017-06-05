@@ -226,31 +226,42 @@ class Character(Entity):
             return new_pos_v
 
     def check_map_bounds(self, pos):
-        footprint = self._get_footprint_by_position(pos.x, pos.y)
+        floor_rects = self._world.stage.floor_rects
+        if not floor_rects:
+            return Vector2d(pos.x, pos.y)
 
-        # Check top-bottom map bounds
-        top_overflow = self._world.bounds.y - footprint.y
-        bottom_overflow = footprint.bottom - self._world.bounds.bottom
-        if top_overflow > 0:
-            y_correction = self.handle_bound_overflow(top=top_overflow)
-        elif bottom_overflow > 0:
-            y_correction = -self.handle_bound_overflow(bottom=bottom_overflow)
-        else:
-            y_correction = 0
-        new_fy = pos.y + y_correction
+        for rect in floor_rects:
+            if rect.contains_vector(pos):
+                return pos
 
-        # Check left-right map bounds
-        left_overflow = self._world.bounds.x + self._world.window_x - footprint.x
-        right_overflow = footprint.right - self._world.bounds.right - self._world.window_x
-        if left_overflow > 0:
-            x_correction = self.handle_bound_overflow(left=left_overflow)
-        elif right_overflow > 0:
-            x_correction = -self.handle_bound_overflow(right=right_overflow)
-        else:
-            x_correction = 0
-        new_fx = pos.x + x_correction
+        # TODO: This shouldn't block the movement in all directions
+        return self.position
 
-        return Vector2d(new_fx, new_fy)
+        # footprint = self._get_footprint_by_position(pos.x, pos.y)
+        #
+        # # Check top-bottom map bounds
+        # top_overflow = self._world.bounds.y - footprint.y
+        # bottom_overflow = footprint.bottom - self._world.bounds.bottom
+        # if top_overflow > 0:
+        #     y_correction = self.handle_bound_overflow(top=top_overflow)
+        # elif bottom_overflow > 0:
+        #     y_correction = -self.handle_bound_overflow(bottom=bottom_overflow)
+        # else:
+        #     y_correction = 0
+        # new_fy = pos.y + y_correction
+        #
+        # # Check left-right map bounds
+        # left_overflow = self._world.bounds.x + self._world.window_x - footprint.x
+        # right_overflow = footprint.right - self._world.bounds.right - self._world.window_x
+        # if left_overflow > 0:
+        #     x_correction = self.handle_bound_overflow(left=left_overflow)
+        # elif right_overflow > 0:
+        #     x_correction = -self.handle_bound_overflow(right=right_overflow)
+        # else:
+        #     x_correction = 0
+        # new_fx = pos.x + x_correction
+        #
+        # return Vector2d(new_fx, new_fy)
 
     def angle_between_vectors_to_180(self, v1, v2):
         angle = abs(v1.angle_to(v2))

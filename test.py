@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 import pyglet
 from pyglet.gl import *
+from pyglet.font import load as load_font
+import pyglet.font
 
 from game.player import Player
 from game.stage_1 import Stage1
@@ -44,26 +46,23 @@ gamepads = [GamePad(j) for j in joysticks]
 
 # ================================
 
-world = World(
-    bounds=Rect(0, 200, 600, 400),
-    stage=Stage2(),
-)
-
+world = World(bounds=Rect(0, 200, 600, 400))
+world.set_stage(Stage2())
 
 def add_players(
         world,
         gamepads,
         sprites=(
                 # sprite,  footprint, posx, posy
-                ('max', Player.DEFAULT_FOOTPRINT_DIM, 130, 245),
-                ('haggar', Rect(0, 0, 50, 12), 160, 230),
-                ('guy', Player.DEFAULT_FOOTPRINT_DIM, 200, 260),
+                ('max', Player.DEFAULT_FOOTPRINT_DIM),
+                ('haggar', Rect(0, 0, 50, 12)),
+                ('guy', Player.DEFAULT_FOOTPRINT_DIM),
         ),
 ):
     for num, gamepad in enumerate(gamepads):
-        sprite, footprint, posx, posy = sprites[num]
+        sprite, footprint = sprites[num]
         world.add_player(
-            Player(num, world, gamepad, sprite, posx, posy, footprint_dim=footprint),
+            Player(num, world, gamepad, sprite, footprint_dim=footprint),
         )
 
 
@@ -79,12 +78,18 @@ def update_frames(dt):
 fps_display = pyglet.clock.ClockDisplay()
 
 
+# font = load_font('', 36, bold=True)
+# label = pyglet.font.Text(font, '', color=(1,1,1,1), x=10, y=600)
+
 @window.event
 def on_draw():
+    global label
     pyglet.gl.glClearColor(0, 0, 0, 0)
     window.clear()
     world.draw(None)
     fps_display.draw()
+    # label.text = "TONNO"
+    # label.draw()
 
 
 pyglet.clock.set_fps_limit(60)
