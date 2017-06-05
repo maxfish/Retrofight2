@@ -102,9 +102,8 @@ class Gfx:
 
         t_x1 = 0  # source_rect.x / picW
         t_y1 = 0  # source_rect.y / picH
-        t_x2 = texture.tex_coords[3]  # t_x1 + (source_rect.width) / picW
-        t_y2 = texture.tex_coords[7]  # t_y1 + (source_rect.height) / picH
-        # < class 'tuple'>: (0.0, 0.0, 0.0, 0.9375, 0.0, 0.0, 0.9375, 0.875, 0.0, 0.0, 0.875, 0.0)
+        t_x2 = texture.tex_coords[3]
+        t_y2 = texture.tex_coords[7]
         s_w = source_rect.width * scale
         s_h = source_rect.height * scale
 
