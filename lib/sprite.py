@@ -17,6 +17,7 @@ class Sprite:
         self.animation_name = None
         self.animation_frame_index = None
         self.animation_frame_delay = 0
+        self.animation_speed = 1
         self.animating = False
 
     def draw(self, surface, window_x=0, window_y=0):
@@ -65,12 +66,13 @@ class Sprite:
         self.animation_frame_index = 0
         self.animating = False
 
-    def play_animation(self, animation_name, flags=0):
+    def play_animation(self, animation_name, flags=0, speed=1):
         if (self.flags & FramesStore.FLAG_LOOP_ANIMATION) > 0 and \
                         self.flags == flags and animation_name == self.animation_name:
             return
 
         self.animating = True
+        self.animation_speed = speed
         self.animation_name = animation_name
         self.flags = flags
         self._set_animation_frame(0)
@@ -91,7 +93,7 @@ class Sprite:
             self.next_animation_frame()
             return
         else:
-            self.animation_frame_delay -= game_speed
+            self.animation_frame_delay -= game_speed * self.animation_speed
             return
 
     def next_animation_frame(self):
@@ -122,7 +124,10 @@ class Sprite:
         self.frame = self.frames_store.get_frame(new_frame.frame_name)
 
     def _update_collision_boxes(self):
-        # NOTE: this crashes when there is no animation running
+        if not self.animating:
+            self.attack_box = None
+            self.hit_box = None
+
         # TODO: flip_y should be handled as well
         animation_frame = self.animation.frames[self.animation_frame_index]
         flip_x = ((self.flags & FramesStore.FLAG_FLIP_X) > 0) ^ animation_frame.flip_x
