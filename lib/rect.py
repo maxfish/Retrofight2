@@ -20,6 +20,10 @@ class Rect(object):
                     or self.top > rect.bottom
                     or self.bottom < rect.top)
 
+    def contains_vector(self, vec):
+        return (self.left <= vec.x <= self.right
+                and self.top <= vec.y <= self.bottom)
+
     def to_dictionary(self):
         return {
             'x': self.x,
