@@ -8,26 +8,29 @@ from lib.vector2d import Vector2d
 class TMXMap(object):
     def __init__(self, filename):
         tm = pytmx.util_pyglet.load_pyglet(filename, invert_y=False)
-        self.size = tm.width * tm.tilewidth, tm.height * tm.tileheight
-        self.tmx_data = tm
-        self.layer_offsets = [Vector2d(0, 0) for _ in range(0, len(self.tmx_data.layers))]
+        self._size = tm.width * tm.tilewidth, tm.height * tm.tileheight
+        self._tmx_data = tm
+        self._layer_offsets = [Vector2d(0, 0) for _ in range(0, len(self._tmx_data.layers))]
 
     @property
     def width_in_pixels(self):
-        return self.size[0]
+        return self._size[0]
 
     @property
     def height_in_pixels(self):
-        return self.size[0]
+        return self._size[1]
 
     def draw(self):
-        self.draw_layers_range(0, len(self.tmx_data.layers))
+        self.draw_layers_range(0, len(self._tmx_data.layers))
 
     def draw_layers_range(self, start, how_many):
         for index in range(start, start + how_many):
-            layer = self.tmx_data.layers[index]
-            offset_x = layer.offsetx + self.layer_offsets[index].x
-            offset_y = layer.offsety + self.layer_offsets[index].y
+            layer = self._tmx_data.layers[index]
+            if layer.visible == 0:
+                continue
+
+            offset_x = layer.offsetx + self._layer_offsets[index].x
+            offset_y = layer.offsety + self._layer_offsets[index].y
 
             if isinstance(layer, pytmx.TiledTileLayer):
                 # for x, y, image in layer.tiles():
@@ -49,5 +52,23 @@ class TMXMap(object):
                     pass
 
     def set_layer_offset(self, layer_index, x, y):
-        self.layer_offsets[layer_index].x = x
-        self.layer_offsets[layer_index].y = y
+        self._layer_offsets[layer_index].x = x
+        self._layer_offsets[layer_index].y = y
+
+    def all_objects_as_dict(self, layer_name):
+        # Note: there shouldn't be duplicate or missing names
+        if layer_name not in self._tmx_data.layernames:
+            return {}
+
+        objects = dict()
+        layer = self._tmx_data.layernames[layer_name]
+        for obj in layer:
+            objects[obj.name] = obj
+
+        return objects
+
+    def all_objects_as_list(self, layer_name):
+        if layer_name not in self._tmx_data.layernames:
+            return []
+
+        return list(self._tmx_data.layernames[layer_name])
