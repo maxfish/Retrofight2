@@ -1,2 +1,0 @@
-pyglet==1.2.4
-git+https://github.com/maxfish/PyTMX.git#egg=PyTMX
