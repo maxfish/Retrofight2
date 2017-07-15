@@ -2,7 +2,7 @@
 import logging
 
 from mgl2d.app import App
-from mgl2d.graphics.postprocessing_step import PostprocessingStep
+from mgl2d.graphics.post_processing_step import PostProcessingStep
 from mgl2d.graphics.screen import Screen
 from mgl2d.graphics.shader import Shader
 from mgl2d.input.game_controller import GameController
@@ -48,7 +48,7 @@ j = Joystick()
 j.open(0)
 add_players(world, [j])
 
-ppe = PostprocessingStep(screen.width, screen.height)
+ppe = PostProcessingStep(screen.width, screen.height)
 ppe.drawable.shader = Shader.from_files('resources/shaders/base.vert', 'resources/shaders/postprocessing_retro.frag')
 screen.add_postprocessing_step(ppe)
 
