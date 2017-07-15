@@ -15,6 +15,9 @@ from game.world import World
 
 logging.basicConfig(level=logging.INFO)
 
+GAME_FPS = 50
+GAME_FRAME_MS = 1000 / GAME_FPS
+
 app = App()
 screen = Screen(1280, 720, 'Test')
 screen.print_info()
@@ -54,10 +57,10 @@ def draw_frame(screen):
     world.draw(screen)
 
 
-def update_frame(millis):
-    world.update(1)
+def update_frame(delta_ms):
+    world.update(delta_ms / GAME_FRAME_MS)
     for p in world.players:
         p.handle_input()
 
 
-app.run(screen, draw_frame, update_frame)
+app.run(screen, draw_frame, update_frame, fps=50)
