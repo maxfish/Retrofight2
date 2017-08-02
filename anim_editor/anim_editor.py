@@ -8,11 +8,11 @@ from pygame.math import Vector2
 import os
 import pygame
 from collections import OrderedDict
-from mgl2d.frames_store import FramesStore
-from mgl2d.gamepad import GamePad
-from mgl2d.gfx import Gfx
-from mgl2d.sprite import Sprite
-from mgl2d.utils import Utils
+from lib.frames_store import FramesStore
+from lib.gamepad import GamePad
+from lib.gfx import Gfx
+from lib.sprite import Sprite
+from lib.utils import Utils
 
 FPS = 30
 SURFACE_WIDTH = 500

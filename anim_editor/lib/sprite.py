@@ -1,5 +1,5 @@
 import pygame
-from mgl2d.frames_store import FramesStore
+from lib.frames_store import FramesStore
 
 
 class Sprite:

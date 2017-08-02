@@ -1,4 +1,4 @@
-from mgl2d.controller import Controller
+from lib.controller import Controller
 import pygame
 
 

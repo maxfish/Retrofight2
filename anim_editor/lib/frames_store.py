@@ -5,7 +5,7 @@ from pygame.math import Vector2
 import os
 import pygame
 from collections import OrderedDict
-from mgl2d.gfx import Gfx
+from lib.gfx import Gfx
 
 
 class FramesStore:

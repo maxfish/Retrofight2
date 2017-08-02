@@ -1,5 +1,5 @@
 import re
-from mgl2d.controller import Controller
+from lib.controller import Controller
 
 
 class GamePad(Controller):
