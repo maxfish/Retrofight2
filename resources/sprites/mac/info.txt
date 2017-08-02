@@ -1,0 +1,48 @@
+stand.00 DSC03193.png
+stand.01 DSC03194.png
+stand.02 DSC03195.png
+stand.03 DSC03196.png
+stand.04 DSC03197.png
+stand.05 DSC03198.png
+stand.06 DSC03199.png
+stand.07 DSC03200.png
+stand.08 DSC03201.png
+stand.09 DSC03202.png
+stand.10 DSC03203.png
+stand.11 DSC03204.png
+stand.12 DSC03205.png
+stand.13 DSC03206.png
+stand.14 DSC03207.png
+stand.15 DSC03208.png
+stand.16 DSC03209.png
+
+punch_low.00 DSC01987.png
+punch_low.01 DSC01988.png
+punch_low.02 DSC01989.png
+punch_low.03 DSC01990.png
+punch_low.04 DSC01991.png
+punch_low.05 DSC01992.png
+punch_low.06 DSC01993.png
+punch_low.07 DSC01994.png
+punch_low.08 DSC01995.png
+punch_low.09 DSC01996.png
+
+punch.00 DSC01965.png
+punch.01 DSC01966.png
+punch.02 DSC01967.png
+punch.03 DSC01968.png
+punch.04 DSC01969.png
+punch.05 DSC01970.png
+
+
+hurt.00 DSC02087.png
+hurt.01 DSC02089.png
+
+
+leap.00 DSC02300.png
+
+
+pickup.00 DSC02019.png
+pickup.01 DSC02046.png
+pickup.02 DSC02048.png
+
