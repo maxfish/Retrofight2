@@ -11,3 +11,8 @@ RUN
 ===
 
 python test_game.py
+
+XBOX 360 ON MAC
+===============
+
+https://github.com/360Controller/360Controller/releases
