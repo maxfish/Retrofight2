@@ -5,8 +5,7 @@ from mgl2d.app import App
 from mgl2d.graphics.post_processing_step import PostProcessingStep
 from mgl2d.graphics.screen import Screen
 from mgl2d.graphics.shader import Shader
-from mgl2d.input.game_controller import GameController
-from mgl2d.input.joystick import Joystick
+from mgl2d.input.game_controller_manager import GameControllerManager
 from mgl2d.math.rect import Rect
 
 from game.player import Player
@@ -44,10 +43,10 @@ def add_players(
         )
 
 
-GameController.load_database('resources/gamecontrollerdb.txt')
-j = Joystick()
-j.open(0)
-add_players(world, [j])
+controllerManager = GameControllerManager()
+controllerManager.load_joysticks_database('resources/gamecontrollerdb.txt')
+controller = controllerManager.grab_controller()
+add_players(world, [controller])
 
 ppe = PostProcessingStep(screen.width, screen.height)
 ppe.drawable.shader = Shader.from_files('resources/shaders/base.vert', 'resources/shaders/postprocessing_retro.frag')
