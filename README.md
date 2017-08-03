@@ -28,4 +28,6 @@ source <name-of-venv>/bin/activate
 
 pip install -r requirements.txt
 
+# Connect a Joystick (only XBOX360 for now!)
+
 python anim_editor.py
