@@ -10,3 +10,4 @@ venv/
 ENV/
 
 .idea/
+.DS_Store
