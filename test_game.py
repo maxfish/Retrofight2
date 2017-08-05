@@ -31,7 +31,8 @@ def add_players(
         sprites=(
                 # sprite,  footprint, posx, posy
                 # ('max', Player.DEFAULT_FOOTPRINT_DIM),
-                ('mac', Player.DEFAULT_FOOTPRINT_DIM),
+                # ('mac', Player.DEFAULT_FOOTPRINT_DIM),
+                ('jake', Player.DEFAULT_FOOTPRINT_DIM),
                 ('haggar', Rect(0, 0, 50, 12)),
                 ('guy', Player.DEFAULT_FOOTPRINT_DIM),
         ),
