@@ -211,24 +211,44 @@
         "raise": {
             "frames": [
                 {
-                    "frame": "ground.0",
-                    "delay": 30
-                },
-                {
-                    "frame": "ground.1",
-                    "delay": 3
-                },
-                {
-                    "frame": "ground.0",
-                    "delay": 3
-                },
-                {
-                    "frame": "ground.1",
+                    "frame": "get_up.00",
                     "delay": 2
                 },
                 {
-                    "frame": "pickup.00",
-                    "delay": 2
+                    "frame": "get_up.01"
+                },
+                {
+                    "frame": "get_up.02"
+                },
+                {
+                    "frame": "get_up.03"
+                },
+                {
+                    "frame": "get_up.04"
+                },
+                {
+                    "frame": "get_up.05"
+                },
+                {
+                    "frame": "get_up.06"
+                },
+                {
+                    "frame": "get_up.07"
+                },
+                {
+                    "frame": "get_up.08"
+                },
+                {
+                    "frame": "get_up.09"
+                },
+                {
+                    "frame": "get_up.10"
+                },
+                {
+                    "frame": "get_up.11"
+                },
+                {
+                    "frame": "get_up.12"
                 }
             ]
         },
@@ -397,6 +417,97 @@
                 "y": 141.0
             },
             "image_file": "fall.0.png"
+        },
+        "get_up.00": {
+            "anchor": {
+                "x": 220.0,
+                "y": 72.0
+            },
+            "image_file": "get_up.00.png"
+        },
+        "get_up.01": {
+            "anchor": {
+                "x": 221.0,
+                "y": 91.0
+            },
+            "image_file": "get_up.01.png"
+        },
+        "get_up.02": {
+            "anchor": {
+                "x": 221.0,
+                "y": 96.0
+            },
+            "image_file": "get_up.02.png"
+        },
+        "get_up.03": {
+            "anchor": {
+                "x": 223.0,
+                "y": 132.0
+            },
+            "image_file": "get_up.03.png"
+        },
+        "get_up.04": {
+            "anchor": {
+                "x": 223.0,
+                "y": 141.0
+            },
+            "image_file": "get_up.04.png"
+        },
+        "get_up.05": {
+            "anchor": {
+                "x": 223.0,
+                "y": 167.0
+            },
+            "image_file": "get_up.05.png"
+        },
+        "get_up.06": {
+            "anchor": {
+                "x": 222.0,
+                "y": 241.0
+            },
+            "image_file": "get_up.06.png"
+        },
+        "get_up.07": {
+            "anchor": {
+                "x": 221.0,
+                "y": 306.0
+            },
+            "image_file": "get_up.07.png"
+        },
+        "get_up.08": {
+            "anchor": {
+                "x": 221.0,
+                "y": 312.0
+            },
+            "image_file": "get_up.08.png"
+        },
+        "get_up.09": {
+            "anchor": {
+                "x": 222.0,
+                "y": 308.0
+            },
+            "image_file": "get_up.09.png"
+        },
+        "get_up.10": {
+            "anchor": {
+                "x": 222.0,
+                "y": 304.0
+            },
+            "image_file": "get_up.10.png"
+        },
+        "get_up.11": {
+            "anchor": {
+                "x": 222.0,
+                "y": 302.0
+            },
+            "image_file": "get_up.11.png"
+        },
+        "get_up.12": {
+            "anchor": {
+                "x": 222.0,
+                "y": 303.0
+            },
+            "image_file": "get_up.12.png"
         },
         "ground.0": {
             "anchor": {
@@ -723,38 +834,6 @@
                 "height": 145
             },
             "image_file": "jump_kick.20.png"
-        },
-        "kick.0": {
-            "anchor": {
-                "x": 21.0,
-                "y": 91.0
-            },
-            "hit_box": {
-                "x": -13,
-                "y": -83,
-                "width": 28,
-                "height": 49
-            },
-            "image_file": "kick.0.png"
-        },
-        "kick.1": {
-            "anchor": {
-                "x": 29.0,
-                "y": 102.0
-            },
-            "hit_box": {
-                "x": -16,
-                "y": -85,
-                "width": 28,
-                "height": 52
-            },
-            "attack_box": {
-                "x": 13,
-                "y": -104,
-                "width": 29,
-                "height": 75
-            },
-            "image_file": "kick.1.png"
         },
         "kick_m.00": {
             "anchor": {
@@ -1341,102 +1420,6 @@
                 "y": 17.0
             },
             "image_file": "shadow.png"
-        },
-        "special.0": {
-            "anchor": {
-                "x": 54.0,
-                "y": 86.0
-            },
-            "hit_box": {
-                "x": -24,
-                "y": -84,
-                "width": 28,
-                "height": 71
-            },
-            "image_file": "special.0.png"
-        },
-        "special.1": {
-            "anchor": {
-                "x": 39.0,
-                "y": 97.0
-            },
-            "hit_box": {
-                "x": -17,
-                "y": -93,
-                "width": 30,
-                "height": 69
-            },
-            "image_file": "special.1.png"
-        },
-        "special.2": {
-            "anchor": {
-                "x": 38.0,
-                "y": 100.0
-            },
-            "hit_box": {
-                "x": -17,
-                "y": -99,
-                "width": 32,
-                "height": 58
-            },
-            "attack_box": {
-                "x": 14,
-                "y": -69,
-                "width": 73,
-                "height": 25
-            },
-            "image_file": "special.2.png"
-        },
-        "special.3": {
-            "anchor": {
-                "x": 21.0,
-                "y": 100.0
-            },
-            "hit_box": {
-                "x": -17,
-                "y": -96,
-                "width": 31,
-                "height": 56
-            },
-            "image_file": "special.3.png"
-        },
-        "special.4": {
-            "anchor": {
-                "x": 59.0,
-                "y": 97.0
-            },
-            "hit_box": {
-                "x": -20,
-                "y": -98,
-                "width": 41,
-                "height": 61
-            },
-            "attack_box": {
-                "x": -63,
-                "y": -64,
-                "width": 45,
-                "height": 19
-            },
-            "image_file": "special.4.png"
-        },
-        "special.5": {
-            "anchor": {
-                "x": 35.0,
-                "y": 93.0
-            },
-            "hit_box": {
-                "x": -17,
-                "y": -91,
-                "width": 41,
-                "height": 61
-            },
-            "attack_box": {
-                "x": -5,
-                "y": -60,
-                "width": 35,
-                "height": 19
-            },
-            "image_file": "special.5.png"
         },
         "stand.00": {
             "anchor": {
