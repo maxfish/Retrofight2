@@ -221,7 +221,8 @@ class PlayerStateStand(PlayerState):
                     return self
 
         if self.p.joy.is_button_pressed(GameController.BUTTON_A) \
-                or self.p.joy.is_button_pressed(GameController.BUTTON_B):
+                or self.p.joy.is_button_pressed(GameController.BUTTON_B) \
+                or self.p.joy.is_button_pressed(GameController.BUTTON_X):
             match = self.p._world.nearby_item(self.p.position, max_distance=self.p.MAX_DISTANCE_TO_PICKUP)
             if match:
                 return self.p.STATE_PICKUP
@@ -248,7 +249,8 @@ class PlayerStateWalk(PlayerState):
         super().handle_input()
 
         if self.p.joy.is_button_pressed(GameController.BUTTON_A) \
-                or self.p.joy.is_button_pressed(GameController.BUTTON_B):
+                or self.p.joy.is_button_pressed(GameController.BUTTON_B) \
+                or self.p.joy.is_button_pressed(GameController.BUTTON_X):
             return self.p.STATE_PUNCH
 
         if self.p.joy.is_button_pressed(GameController.BUTTON_Y):
@@ -284,7 +286,11 @@ class PlayerStatePunch(PlayerState):
         super().enter(old_state)
         self.stop()
 
-        if self.p.joy.is_button_down(GameController.BUTTON_A) and self.p.joy.is_button_down(GameController.BUTTON_B):
+        if self.p.joy.is_button_down(GameController.BUTTON_X):
+            self.p.attack_force = self.p.ATTACK_FORCE_PUNCH_2
+            # self.p.punch_2_sound.play()
+            self.play_anim("kick")
+        elif self.p.joy.is_button_down(GameController.BUTTON_A) and self.p.joy.is_button_down(GameController.BUTTON_B):
             self.p.attack_force = self.p.ATTACK_FORCE_SPECIAL
             self.play_anim("special")
         elif self.p.joy.is_button_down(GameController.BUTTON_A):
