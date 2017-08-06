@@ -231,22 +231,41 @@
         "special": {
             "frames": [
                 {
-                    "frame": "special.0"
+                    "frame": "rot_kick.01"
                 },
                 {
-                    "frame": "special.1"
+                    "frame": "rot_kick.02"
                 },
                 {
-                    "frame": "special.2"
+                    "frame": "rot_kick.03"
                 },
                 {
-                    "frame": "special.3"
+                    "frame": "rot_kick.04"
                 },
                 {
-                    "frame": "special.4"
+                    "frame": "rot_kick.05"
                 },
                 {
-                    "frame": "special.5"
+                    "frame": "rot_kick.06",
+                    "delay": 2.0
+                },
+                {
+                    "frame": "rot_kick.07"
+                },
+                {
+                    "frame": "rot_kick.08"
+                },
+                {
+                    "frame": "rot_kick.09"
+                },
+                {
+                    "frame": "rot_kick.10"
+                },
+                {
+                    "frame": "rot_kick.11"
+                },
+                {
+                    "frame": "rot_kick.12"
                 }
             ]
         },
@@ -743,6 +762,97 @@
                 "height": 187
             },
             "image_file": "punch.03.png"
+        },
+        "rot_kick.00": {
+            "anchor": {
+                "x": 78.0,
+                "y": 278.0
+            },
+            "image_file": "rot_kick.00.png"
+        },
+        "rot_kick.01": {
+            "anchor": {
+                "x": 93.0,
+                "y": 288.0
+            },
+            "image_file": "rot_kick.01.png"
+        },
+        "rot_kick.02": {
+            "anchor": {
+                "x": 96.0,
+                "y": 285.0
+            },
+            "image_file": "rot_kick.02.png"
+        },
+        "rot_kick.03": {
+            "anchor": {
+                "x": 68.0,
+                "y": 286.0
+            },
+            "image_file": "rot_kick.03.png"
+        },
+        "rot_kick.04": {
+            "anchor": {
+                "x": 51.0,
+                "y": 290.0
+            },
+            "image_file": "rot_kick.04.png"
+        },
+        "rot_kick.05": {
+            "anchor": {
+                "x": 81.0,
+                "y": 283.0
+            },
+            "image_file": "rot_kick.05.png"
+        },
+        "rot_kick.06": {
+            "anchor": {
+                "x": 99.0,
+                "y": 276.0
+            },
+            "image_file": "rot_kick.06.png"
+        },
+        "rot_kick.07": {
+            "anchor": {
+                "x": 94.0,
+                "y": 273.0
+            },
+            "image_file": "rot_kick.07.png"
+        },
+        "rot_kick.08": {
+            "anchor": {
+                "x": 64.0,
+                "y": 276.0
+            },
+            "image_file": "rot_kick.08.png"
+        },
+        "rot_kick.09": {
+            "anchor": {
+                "x": 35.0,
+                "y": 292.0
+            },
+            "image_file": "rot_kick.09.png"
+        },
+        "rot_kick.10": {
+            "anchor": {
+                "x": 9.0,
+                "y": 308.0
+            },
+            "image_file": "rot_kick.10.png"
+        },
+        "rot_kick.11": {
+            "anchor": {
+                "x": 32.0,
+                "y": 312.0
+            },
+            "image_file": "rot_kick.11.png"
+        },
+        "rot_kick.12": {
+            "anchor": {
+                "x": 42.0,
+                "y": 306.0
+            },
+            "image_file": "rot_kick.12.png"
         },
         "shadow.00": {
             "anchor": {
