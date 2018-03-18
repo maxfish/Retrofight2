@@ -31,15 +31,36 @@ punch.03 DSC01968.png
 punch.04 DSC01969.png
 punch.05 DSC01970.png
 
-
 hurt.00 DSC02087.png
 hurt.01 DSC02089.png
 
-
 leap.00 DSC02300.png
-
 
 pickup.00 DSC02019.png
 pickup.01 DSC02046.png
 pickup.02 DSC02048.png
+
+jump.00		DSC02276.png
+jump.01		DSC02277.png
+jump.02		DSC02278.png
+jump.03		DSC02279.png (requires head patch)
+jump.04		DSC02280.png
+
+walk.00 DSC02135.png
+walk.01 DSC02136.png
+walk.02 DSC02137.png
+walk.03 DSC02138.png
+walk.04 DSC02139.png
+walk.05 DSC02140.png
+walk.06 DSC02141.png
+walk.07 DSC02142.png
+walk.08 DSC02143.png
+walk.09 DSC02144.png
+walk.10 DSC02145.png
+walk.11 DSC02146.png
+walk.12 DSC02147.png
+walk.13 DSC02148.png
+walk.14 DSC02149.png
+walk.15 DSC02150.png
+walk.16 DSC02151.png
 
